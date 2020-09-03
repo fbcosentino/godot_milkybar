@@ -14,6 +14,8 @@ This is meant to be used in HUDs (*head-up displays*) were any animated vertical
 
 - One `content mask` is used to define the shape of the contents (an oscillating liquid in the given example). Only the red channel is used, and controls the alpha channel of the Sprite. Its vertical position is controlled by the `Progress` parameter, moving the mask *down* in the inverse proportion to the progress (that is, `Progress = 1.0` means the mask is not moved, while `Progress = 0.0` means the mask is moved down completely). When the mask is moved down, the upper row of pixels is repeated to cover the rest of the area, so this first row should ideally be black.
 
+All the textures can be animated by using AnimatedTexture.
+
 
 ### Parameters
 
