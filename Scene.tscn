@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Shader/MilkyBar.shader" type="Shader" id=1]
+[ext_resource path="res://Textures/base_texture.png" type="Texture" id=2]
+[ext_resource path="res://Textures/circle_mask.png" type="Texture" id=3]
+[ext_resource path="res://Textures/circle_frame.png" type="Texture" id=4]
+[ext_resource path="res://Textures/AnimatedTexture/animatedtexture_resource.tres" type="Texture" id=5]
+[ext_resource path="res://Scene.gd" type="Script" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/ActiveArea = 0.9
+shader_param/BarOffset = 0.02
+shader_param/UV_X_Scale = 1.0
+shader_param/Progress = 0.5
+shader_param/ContainerMask = ExtResource( 3 )
+shader_param/ContentMask = ExtResource( 5 )
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="ProgressDisplay" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ProgressBar" type="Sprite" parent="ProgressDisplay"]
+material = SubResource( 1 )
+position = Vector2( 312, 222 )
+texture = ExtResource( 2 )
+
+[node name="Frame" type="Sprite" parent="ProgressDisplay"]
+position = Vector2( 312, 222 )
+texture = ExtResource( 4 )
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 83.2445
+margin_top = 205.733
+margin_right = 235.245
+margin_bottom = 233.733
+max_value = 1.0
+step = 0.01
+value = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
