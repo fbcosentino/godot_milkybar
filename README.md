@@ -21,7 +21,7 @@ All the textures can be animated by using AnimatedTexture.
 
 The following parameters are implemented:
 
-- **ActiveArea**: if only a percentage of the vertical space is occupied by the bar, and the progress bar must be shrinked to fit, this controls the actual portion occupied by the bar, normalized (e.g. if the Container Mask occupies 50% of the vertical range of the Sprite, make `ActiveArea = 0.5`)
+- **ActiveArea**: if only a percentage of the vertical space is occupied by the bar, and the progress bar must shrink to fit, this controls the actual portion occupied by the bar, normalized (e.g. if the Container Mask occupies 50% of the vertical range of the Sprite, make `ActiveArea = 0.5`)
 
 - **BarOffset**: if the bar does not start in the very bottom of the sprite, set this to the normalized percentage of the vertical span where the bar starts, from bottom
 
